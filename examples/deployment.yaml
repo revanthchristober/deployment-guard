@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: intentionally-insecure
+spec:
+  template:
+    spec:
+      hostNetwork: true
+      containers:
+        - name: demo
+          image: nginx:1.27
+          securityContext:
+            privileged: true
+            allowPrivilegeEscalation: true
+            runAsNonRoot: false
