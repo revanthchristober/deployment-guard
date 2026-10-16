@@ -1,0 +1,7 @@
+name: intentionally-insecure-example
+on: push
+jobs:
+  example:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
